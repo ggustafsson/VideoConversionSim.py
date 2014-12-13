@@ -1,6 +1,8 @@
 VideoConversionSim.py
 =====================
 
+![Preview](https://github.com/ggustafsson/VideoConversionSim.py/raw/master/Preview.png)
+
 Description
 -----------
 VideoConversionSim.py is the result of a small project in a Computer Science
