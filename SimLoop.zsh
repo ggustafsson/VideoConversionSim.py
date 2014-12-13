@@ -28,6 +28,7 @@
 
 runs=1000
 sed_parse="sed 's/.*: //;s/ .*//'"
+separator=,
 
 if [[ $# -eq 0 ]]; then
   csv_file="SimResults.csv"
@@ -47,6 +48,6 @@ for i in {1..$runs}; do
   mean=$(echo $output | grep "Mean waiting time" | eval $sed_parse)
   longest=$(echo $output | grep "Longest waiting time" | eval $sed_parse)
   above=$(echo $output | grep "Above max waiting time" | eval $sed_parse)
-  echo "$mean,$longest,$above" >>| $csv_file
+  echo "${mean}${separator}${longest}${separator}${above}" >>| $csv_file
   printf "\r\e[K"
 done
