@@ -40,7 +40,7 @@ file = ARGV[0]
 column = Integer(ARGV[1])
 maxvalue = Integer(ARGV[2])
 
-range1 = (Float(maxvalue) / 10).ceil
+range1 = (Float(maxvalue) / 10).ceil # Round upwards so we can divide evenly.
 range2 = range1 * 2
 range3 = range1 * 3
 range4 = range1 * 4
@@ -70,7 +70,7 @@ data.each do |row|
   value = row[column - 1]
 
   case value
-  when 0..range1-1
+  when 0..range1-1 # Zero counts.
     range1_value += 1
   when range1..range2-1
     range2_value += 1
@@ -88,20 +88,20 @@ data.each do |row|
     range8_value += 1
   when range8..range9-1
     range9_value += 1
-  when range9..range10-1
+  when range9..range10 # Go up to 100.
     range10_value += 1
   else
-    puts "WARNING! Value #{value} skipped. Too low MAXVALUE!"
+    puts "WARNING! Value '#{value}' skipped. Too low MAXVALUE!"
   end
 end
 
-puts "R1 #{range1_value}"
-puts "R2 #{range2_value}"
-puts "R3 #{range3_value}"
-puts "R4 #{range4_value}"
-puts "R5 #{range5_value}"
-puts "R6 #{range6_value}"
-puts "R7 #{range7_value}"
-puts "R8 #{range8_value}"
-puts "R9 #{range9_value}"
-puts "R10 #{range10_value}"
+puts "0-#{range1 - 1} #{range1_value}"
+puts "#{range1}-#{range2 - 1} #{range2_value}"
+puts "#{range2}-#{range3 - 1} #{range3_value}"
+puts "#{range3}-#{range4 - 1} #{range4_value}"
+puts "#{range4}-#{range5 - 1} #{range5_value}"
+puts "#{range5}-#{range6 - 1} #{range6_value}"
+puts "#{range6}-#{range7 - 1} #{range7_value}"
+puts "#{range7}-#{range8 - 1} #{range8_value}"
+puts "#{range8}-#{range9 - 1} #{range9_value}"
+puts "#{range9}-#{range10} #{range10_value}"
