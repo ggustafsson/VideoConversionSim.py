@@ -40,26 +40,26 @@ file = ARGV[0]
 column = Integer(ARGV[1])
 maxvalue = Integer(ARGV[2])
 
-range1 = (Float(maxvalue) / 10).ceil # Round upwards so we can divide evenly.
-range2 = range1 * 2
-range3 = range1 * 3
-range4 = range1 * 4
-range5 = range1 * 5
-range6 = range1 * 6
-range7 = range1 * 7
-range8 = range1 * 8
-range9 = range1 * 9
+range1  = (Float(maxvalue) / 10).ceil # Round upwards so we can divide evenly.
+range2  = range1 * 2
+range3  = range1 * 3
+range4  = range1 * 4
+range5  = range1 * 5
+range6  = range1 * 6
+range7  = range1 * 7
+range8  = range1 * 8
+range9  = range1 * 9
 range10 = range1 * 10
 
-range1_value = 0
-range2_value = 0
-range3_value = 0
-range4_value = 0
-range5_value = 0
-range6_value = 0
-range7_value = 0
-range8_value = 0
-range9_value = 0
+range1_value  = 0
+range2_value  = 0
+range3_value  = 0
+range4_value  = 0
+range5_value  = 0
+range6_value  = 0
+range7_value  = 0
+range8_value  = 0
+range9_value  = 0
 range10_value = 0
 
 data = CSV.read(file, { :headers => :first_row,
