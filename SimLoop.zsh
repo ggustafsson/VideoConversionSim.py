@@ -40,7 +40,7 @@ else
 fi
 
 echo "Writing down simulation results in file: $csv_file"
-echo "Mean wait,Longest wait,Above max wait" >| $csv_file
+echo "Mean wait${separator}Longest wait${separator}Above max wait" >| $csv_file
 
 for i in {1..$runs}; do
   echo -n $i

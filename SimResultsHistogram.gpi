@@ -5,32 +5,28 @@
 set style data histogram
 set style fill solid border -1
 set grid
-set ylabel "Uploads"
+set ylabel "Simulation runs"
 set yrange [0:1000]
 set ytics 100
-set term svg size 800,500
+set term svg size 860,480
 
 cd "Output"
 
-set xtic rotate by -45
-
-set xlabel "Mean wait time (grouped by time range)"
+set xlabel "Mean waiting time (grouped by time range, minutes)"
 set output "Output-Mean.svg"
 plot "../Data/Results-10R-Grouped-Mean.txt" using 2:xtic(1) title "10 resource slots", \
      "../Data/Results-8R-Grouped-Mean.txt"  using 2:xtic(1) title  "8 resource slots", \
      "../Data/Results-6R-Grouped-Mean.txt"  using 2:xtic(1) title  "6 resource slots", \
      "../Data/Results-4R-Grouped-Mean.txt"  using 2:xtic(1) title  "4 resource slots"
 
-set xlabel "Longest wait time (grouped by time range)"
+set xlabel "Longest waiting time (grouped by time range, minutes)"
 set output "Output-Longest.svg"
 plot "../Data/Results-10R-Grouped-Longest.txt" using 2:xtic(1) title "10 resource slots", \
      "../Data/Results-8R-Grouped-Longest.txt"  using 2:xtic(1) title  "8 resource slots", \
      "../Data/Results-6R-Grouped-Longest.txt"  using 2:xtic(1) title  "6 resource slots", \
      "../Data/Results-4R-Grouped-Longest.txt"  using 2:xtic(1) title  "4 resource slots"
 
-set xtic rotate by 0
-
-set xlabel "Above max wait time (grouped by amount range)"
+set xlabel "Above max waiting time (grouped by amount range)"
 set output "Output-Above.svg"
 plot "../Data/Results-10R-Grouped-Above.txt" using 2:xtic(1) title "10 resource slots", \
      "../Data/Results-8R-Grouped-Above.txt"  using 2:xtic(1) title  "8 resource slots", \
