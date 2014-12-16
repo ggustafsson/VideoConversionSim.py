@@ -95,13 +95,26 @@ data.each do |row|
   end
 end
 
-puts "0-#{range1 - 1} #{range1_value}"
-puts "#{range1}-#{range2 - 1} #{range2_value}"
-puts "#{range2}-#{range3 - 1} #{range3_value}"
-puts "#{range3}-#{range4 - 1} #{range4_value}"
-puts "#{range4}-#{range5 - 1} #{range5_value}"
-puts "#{range5}-#{range6 - 1} #{range6_value}"
-puts "#{range6}-#{range7 - 1} #{range7_value}"
-puts "#{range7}-#{range8 - 1} #{range8_value}"
-puts "#{range8}-#{range9 - 1} #{range9_value}"
-puts "#{range9}-#{range10} #{range10_value}"
+if range10 > 100
+  puts "0-#{(range1 - 1) / 60} #{range1_value}"
+  puts "#{range1 / 60}-#{(range2 - 1) / 60} #{range2_value}"
+  puts "#{range2 / 60}-#{(range3 - 1) / 60} #{range3_value}"
+  puts "#{range3 / 60}-#{(range4 - 1) / 60} #{range4_value}"
+  puts "#{range4 / 60}-#{(range5 - 1) / 60} #{range5_value}"
+  puts "#{range5 / 60}-#{(range6 - 1) / 60} #{range6_value}"
+  puts "#{range6 / 60}-#{(range7 - 1) / 60} #{range7_value}"
+  puts "#{range7 / 60}-#{(range8 - 1) / 60} #{range8_value}"
+  puts "#{range8 / 60}-#{(range9 - 1) / 60} #{range9_value}"
+  puts "#{range9 / 60}-#{range10 / 60} #{range10_value}"
+else
+  puts "0-#{range1 - 1} #{range1_value}"
+  puts "#{range1}-#{range2 - 1} #{range2_value}"
+  puts "#{range2}-#{range3 - 1} #{range3_value}"
+  puts "#{range3}-#{range4 - 1} #{range4_value}"
+  puts "#{range4}-#{range5 - 1} #{range5_value}"
+  puts "#{range5}-#{range6 - 1} #{range6_value}"
+  puts "#{range6}-#{range7 - 1} #{range7_value}"
+  puts "#{range7}-#{range8 - 1} #{range8_value}"
+  puts "#{range8}-#{range9 - 1} #{range9_value}"
+  puts "#{range9}-#{range10} #{range10_value}"
+end
