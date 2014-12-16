@@ -5,6 +5,7 @@
 set style data histogram
 set style fill solid border -1
 set grid
+set ylabel "Uploads"
 set yrange [0:1000]
 set ytics 100
 set term svg size 800,500
@@ -13,6 +14,7 @@ cd "Output"
 
 set xtic rotate by -45
 
+set xlabel "Mean wait time (grouped by time range)"
 set output "Output-Mean-4R.svg"
 plot "../Data/Results-4R-Grouped-Mean.dat" using 2:xtic(1) notitle
 set output "Output-Mean-6R.svg"
@@ -22,6 +24,7 @@ plot "../Data/Results-8R-Grouped-Mean.dat" using 2:xtic(1) notitle
 set output "Output-Mean-10R.svg"
 plot "../Data/Results-10R-Grouped-Mean.dat" using 2:xtic(1) notitle
 
+set xlabel "Longest wait time (grouped by time range)"
 set output "Output-Longest-4R.svg"
 plot "../Data/Results-4R-Grouped-Longest.dat" using 2:xtic(1) notitle
 set output "Output-Longest-6R.svg"
@@ -33,6 +36,7 @@ plot "../Data/Results-10R-Grouped-Longest.dat" using 2:xtic(1) notitle
 
 set xtic rotate by 0
 
+set xlabel "Above max wait time (grouped by amount range)"
 set output "Output-Above-4R.svg"
 plot "../Data/Results-4R-Grouped-Above.dat" using 2:xtic(1) notitle
 set output "Output-Above-6R.svg"

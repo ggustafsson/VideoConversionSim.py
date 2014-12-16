@@ -113,12 +113,14 @@ server_slots = SERVERS * JOBS_PER_SERVER
 video_lengths = []
 waiting_times = []
 
-print("%d server(s), %d job(s) each = %d conversion(s) at a time\n" % \
+print("%d server(s), %d job(s) each = %d conversion(s) at a time" % \
       (SERVERS, JOBS_PER_SERVER, server_slots))
+print("%d video files total, 1 new every ~%s\n" % (UPLOADS, \
+      time_f(UPLOADS_INTERVAL)))
 
 print("    Video length = %s - %s" % (time_f(MIN_VIDEO_LENGTH), \
       time_f(MAX_VIDEO_LENGTH)))
-print(" Conversion time = %d%% of length" % (CONVERSION_TIME * 100))
+print(" Conversion time = %d%% of video length" % (CONVERSION_TIME * 100))
 print("Max waiting time = %s\n" % time_f(MAX_WAITING_TIME))
 
 env = simpy.Environment()
