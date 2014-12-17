@@ -66,7 +66,7 @@ def upload(env, uploads, interval, resources):
     """Generates video uploads at random times."""
     for i in range(uploads):
         number = i + 1
-        conversion = convert(env, "Video %03d" % number, resources)
+        conversion = convert(env, "Video %04d" % number, resources)
         env.process(conversion)
 
         wait = random.expovariate(1.0 / interval)
