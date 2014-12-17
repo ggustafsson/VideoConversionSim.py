@@ -41,9 +41,9 @@ MIN_VIDEO_LENGTH = 30
 MAX_VIDEO_LENGTH = (30 * 60)
 CONVERSION_TIME = 0.5
 
-COLOR_NORMAL = "\033[0m"
+COLOR_NORMAL   = "\033[0m"
 COLOR_UPLOADED = "\033[1;31m"
-COLOR_STARTED = "\033[1;33m"
+COLOR_STARTED  = "\033[1;33m"
 COLOR_FINISHED = "\033[1;32m"
 
 def time_f(seconds):
@@ -79,14 +79,14 @@ def convert(env, name, resources):
     global video_lengths
     global waiting_times
 
+    arrived = env.now
     length = random.randint(MIN_VIDEO_LENGTH, MAX_VIDEO_LENGTH)
-    video_lengths.append(length)
     duration = length * CONVERSION_TIME
+    video_lengths.append(length)
 
     print("%6d -" % env.now +
           COLOR_UPLOADED + " %s uploaded " % name + COLOR_NORMAL +
           ": Length is %s" % time_f(length))
-    arrived = env.now
 
     with resources.request() as wait_for_slot:
         yield wait_for_slot
