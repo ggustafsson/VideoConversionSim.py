@@ -32,8 +32,8 @@ import simpy
 import statistics
 
 SERVERS = 2
-JOBS_PER_SERVER = 2
-UPLOADS = 100
+JOBS_PER_SERVER = 4
+UPLOADS = (24 * 60)
 UPLOADS_INTERVAL = (1 * 60)
 MAX_WAITING_TIME = (5 * 60)
 

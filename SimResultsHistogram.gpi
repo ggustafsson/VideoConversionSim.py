@@ -13,22 +13,16 @@ set term svg size 860,480
 cd "Output"
 
 set xlabel "Mean waiting time (grouped by time range, minutes)"
-set output "Output-Mean.svg"
-plot "../Data/Results-10R-Grouped-Mean.txt" using 2:xtic(1) title "10 resource slots", \
-     "../Data/Results-8R-Grouped-Mean.txt"  using 2:xtic(1) title  "8 resource slots", \
-     "../Data/Results-6R-Grouped-Mean.txt"  using 2:xtic(1) title  "6 resource slots", \
-     "../Data/Results-4R-Grouped-Mean.txt"  using 2:xtic(1) title  "4 resource slots"
+set output "Histogram-Mean.svg"
+plot "../Data/Results-12R-Mean.txt" using 2:xtic(1) title "3 servers (12 slots)", \
+     "../Data/Results-8R-Mean.txt"  using 2:xtic(1) title "2 servers (8 slots)"
 
 set xlabel "Longest waiting time (grouped by time range, minutes)"
-set output "Output-Longest.svg"
-plot "../Data/Results-10R-Grouped-Longest.txt" using 2:xtic(1) title "10 resource slots", \
-     "../Data/Results-8R-Grouped-Longest.txt"  using 2:xtic(1) title  "8 resource slots", \
-     "../Data/Results-6R-Grouped-Longest.txt"  using 2:xtic(1) title  "6 resource slots", \
-     "../Data/Results-4R-Grouped-Longest.txt"  using 2:xtic(1) title  "4 resource slots"
+set output "Histogram-Longest.svg"
+plot "../Data/Results-12R-Longest.txt" using 2:xtic(1) title "3 servers (12 slots)", \
+     "../Data/Results-8R-Longest.txt"  using 2:xtic(1) title "2 servers (8 slots)"
 
-set xlabel "Above max waiting time (grouped by amount range)"
-set output "Output-Above.svg"
-plot "../Data/Results-10R-Grouped-Above.txt" using 2:xtic(1) title "10 resource slots", \
-     "../Data/Results-8R-Grouped-Above.txt"  using 2:xtic(1) title  "8 resource slots", \
-     "../Data/Results-6R-Grouped-Above.txt"  using 2:xtic(1) title  "6 resource slots", \
-     "../Data/Results-4R-Grouped-Above.txt"  using 2:xtic(1) title  "4 resource slots"
+set xlabel "Above max waiting time (grouped by amount range, percentage)"
+set output "Histogram-Above.svg"
+plot "../Data/Results-12R-Above.txt" using 2:xtic(1) title "3 servers (12 slots)", \
+     "../Data/Results-8R-Above.txt"  using 2:xtic(1) title "2 servers (8 slots)"

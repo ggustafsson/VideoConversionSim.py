@@ -4,7 +4,7 @@
 
 runs=1000
 sed_parse="sed 's/.*: //;s/ .*//'"
-separator=;
+separator=";"
 
 if [[ $# -eq 0 ]]; then
   csv_file="SimResults.csv"
