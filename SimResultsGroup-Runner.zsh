@@ -14,4 +14,3 @@ cd Data
 
 ../SimResultsGroup.rb Results-8R.csv  3 1440 >| Results-8R-Above.txt
 ../SimResultsGroup.rb Results-12R.csv 3 1440 >| Results-12R-Above.txt
-../SimResultsGroup.rb Results-12R.csv 3 45   >| Results-12R-Above-Alone.txt
