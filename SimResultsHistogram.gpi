@@ -10,19 +10,35 @@ set yrange [0:1000]
 set ytics 100
 set term svg size 860,480
 
+set style line 1 fc rgb "#4ea4fc"
+set style line 2 fc rgb "#fc442e"
+
 cd "Output"
 
+set xlabel "Mean waiting time (grouped by time range, ~ seconds)"
+set output "Histogram-Mean-12R.svg"
+plot "../Data/Results-12R-Mean-Alone.txt" using 2:xtic(1) title "3 servers (12 slots)" ls 1
 set xlabel "Mean waiting time (grouped by time range, ~ minutes)"
+set output "Histogram-Mean-8R.svg"
+plot "../Data/Results-8R-Mean.txt" using 2:xtic(1) title "2 servers (8 slots)" ls 2
 set output "Histogram-Mean.svg"
-plot "../Data/Results-12R-Mean.txt" using 2:xtic(1) title "3 servers (12 slots)", \
-     "../Data/Results-8R-Mean.txt"  using 2:xtic(1) title "2 servers (8 slots)"
+plot "../Data/Results-12R-Mean.txt" using 2:xtic(1) title "3 servers (12 slots)" ls 1, \
+     "../Data/Results-8R-Mean.txt"  using 2:xtic(1) title "2 servers (8 slots)"  ls 2
 
 set xlabel "Longest waiting time (grouped by time range, ~ minutes)"
+set output "Histogram-Longest-12R.svg"
+plot "../Data/Results-12R-Longest-Alone.txt" using 2:xtic(1) title "3 servers (12 slots)" ls 1
+set output "Histogram-Longest-8R.svg"
+plot "../Data/Results-8R-Longest.txt" using 2:xtic(1) title "2 servers (8 slots)" ls 2
 set output "Histogram-Longest.svg"
-plot "../Data/Results-12R-Longest.txt" using 2:xtic(1) title "3 servers (12 slots)", \
-     "../Data/Results-8R-Longest.txt"  using 2:xtic(1) title "2 servers (8 slots)"
+plot "../Data/Results-12R-Longest.txt" using 2:xtic(1) title "3 servers (12 slots)" ls 1, \
+     "../Data/Results-8R-Longest.txt"  using 2:xtic(1) title "2 servers (8 slots)"  ls 2
 
 set xlabel "Above max waiting time (grouped by amount range, percentage)"
+set output "Histogram-Above-12R.svg"
+plot "../Data/Results-12R-Above-Alone.txt" using 2:xtic(1) title "3 servers (12 slots)" ls 1
+set output "Histogram-Above-8R.svg"
+plot "../Data/Results-8R-Above.txt" using 2:xtic(1) title "2 servers (8 slots)" ls 2
 set output "Histogram-Above.svg"
-plot "../Data/Results-12R-Above.txt" using 2:xtic(1) title "3 servers (12 slots)", \
-     "../Data/Results-8R-Above.txt"  using 2:xtic(1) title "2 servers (8 slots)"
+plot "../Data/Results-12R-Above.txt" using 2:xtic(1) title "3 servers (12 slots)" ls 1, \
+     "../Data/Results-8R-Above.txt"  using 2:xtic(1) title "2 servers (8 slots)"  ls 2
