@@ -1,17 +1,18 @@
-VideoConversionSim.py
+ideoConversionSim.py
 =====================
 
 ![Preview](https://github.com/ggustafsson/VideoConversionSim.py/raw/master/Preview.png)
 
 Description
 -----------
-VideoConversionSim.py is the result of a small project in a Computer Science
-course at University West, Trollhättan. The program simulates a system that
-converts uploaded video files (resources, queues etc). This project was created
-under a short amount of time and is therefor not perfect but it can at least be
-used as a reference when developing something else.
+**VideoConversionSim.py** is the result of a small project in a Computer
+Science course at University West, Trollhättan. The program simulates a system
+that converts uploaded video files (resources, queues etc). This project was
+created under a short amount of time and is therefor not perfect but it can at
+least be used as a reference when developing something else.
 
-The best way to understand all of this is to read the file Project Report.pdf.
+The best way to understand all of this is to read the file **Project
+Report.pdf**.
 
 Components
 ----------
@@ -29,7 +30,7 @@ Dependencies
 ------------
 - **Python 3**
 - **SimPy 3**
-- **Ruby 2**
+- **Ruby**
 - **Zsh**
 - **Gnuplot**
 
