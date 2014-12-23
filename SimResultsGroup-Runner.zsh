@@ -2,6 +2,11 @@
 
 # Written by Göran Gustafsson <gustafsson.g@gmail.com>.
 
+# Description: The script i used to automatically run SimResultsGroup.rb on all
+# of my logged data files.
+
+# Usage: SimResultsGroup-Runner.zsh
+
 cd Data
 
 ../SimResultsGroup.rb Results-8R.csv  1 2958 >| Results-8R-Mean.txt

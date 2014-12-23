@@ -2,9 +2,15 @@
 
 # Written by Göran Gustafsson <gustafsson.g@gmail.com>.
 
+# Description: Parses the CSV file from SimLoop.zsh and group the values in 10
+# equally large range groups.
+#
 # Note that this is pretty ugly code that is specific for my needs. I use this
 # to create data that is later used with SimResultsHistogram.gpi to create the
 # specific histograms that i need for my project.
+
+# Usage: SimResultsGroup.rb data.csv 1 1000
+#   (1000 (MAXVALUE) is the largest value inside of that specific column.)
 
 filename = File.basename($0)
 

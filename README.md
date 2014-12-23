@@ -14,7 +14,7 @@ used as a reference when developing something else.
 Components
 ----------
 - VideoConversionSim.py: Simulates uploads and video conversions.
-- SimLoop.zsh: Runs VideoConversionSim.py 1000 times and writes down all of the
+- SimLoop.zsh: Runs VideoConversionSim.py X times and writes down all of the
   interesting results into a CSV file.
 - SimResultsGroup.rb: Parses the CSV file from SimLoop.zsh and group the values
   in 10 equally large range groups.

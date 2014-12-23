@@ -2,6 +2,11 @@
 
 # Written by Göran Gustafsson <gustafsson.g@gmail.com>.
 
+# Description: The Gnuplot commands used for creating histograms of the
+# collected data.
+
+# Usage: SimResultsHistogram.gpi
+
 set style data histogram
 set style fill solid border -1
 set grid
