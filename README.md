@@ -1,4 +1,4 @@
-ideoConversionSim.py
+VideoConversionSim.py
 =====================
 
 ![Preview](https://github.com/ggustafsson/VideoConversionSim.py/raw/master/Preview.png)
