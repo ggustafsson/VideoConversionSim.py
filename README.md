@@ -11,6 +11,8 @@ converts uploaded video files (resources, queues etc). This project was created
 under a short amount of time and is therefor not perfect but it can at least be
 used as a reference when developing something else.
 
+The best way to understand all of this is to read the file Project Report.pdf.
+
 Components
 ----------
 - VideoConversionSim.py: Simulates uploads and video conversions.
