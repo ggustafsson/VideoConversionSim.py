@@ -16,6 +16,12 @@ Components
 - VideoConversionSim.py: Simulates uploads and video conversions.
 - SimLoop.zsh: Runs VideoConversionSim.py 1000 times and writes down all of the
   interesting results into a CSV file.
+- SimResultsGroup.rb: Parses the CSV file from SimLoop.zsh and group the values
+  in 10 equally large range groups.
+- SimResultsGroup-Runner.zsh: The script i used to automatically run
+  SimResultsGroup.rb on all of my logged data files.
+- SimResultsHistogram.gpi: The Gnuplot commands used for creating histograms of
+  the collected data.
 
 Dependencies
 ------------
