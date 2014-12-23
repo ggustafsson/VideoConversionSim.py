@@ -15,20 +15,23 @@ The best way to understand all of this is to read the file Project Report.pdf.
 
 Components
 ----------
-- VideoConversionSim.py: Simulates uploads and video conversions.
-- SimLoop.zsh: Runs VideoConversionSim.py X times and writes down all of the
-  interesting results into a CSV file.
-- SimResultsGroup.rb: Parses the CSV file from SimLoop.zsh and group the values
-  in 10 equally large range groups.
-- SimResultsGroup-Runner.zsh: The script i used to automatically run
-  SimResultsGroup.rb on all of my logged data files.
-- SimResultsHistogram.gpi: The Gnuplot commands used for creating histograms of
-  the collected data.
+- **VideoConversionSim.py** - Simulates uploads and video conversions.
+- **SimLoop.zsh** - Runs **VideoConversionSim.py** X times and writes down all
+  of the interesting results into a CSV file.
+- **SimResultsGroup.rb** - Parses the CSV file from **SimLoop.zsh** and group
+  the values in 10 equally large range groups.
+- **SimResultsGroup-Runner.zsh** - The script i used to automatically run
+  **SimResultsGroup.rb** on all of my logged data files.
+- **SimResultsHistogram.gpi** - The Gnuplot commands used for creating
+  histograms of the collected data.
 
 Dependencies
 ------------
-- Python 3
-- SimPy 3
+- **Python 3**
+- **SimPy 3**
+- **Ruby 2**
+- **Zsh**
+- **Gnuplot**
 
 License
 -------
