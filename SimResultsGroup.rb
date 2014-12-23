@@ -9,7 +9,7 @@
 # to create data that is later used with SimResultsHistogram.gpi to create the
 # specific histograms that i need for my project.
 
-# Usage: SimResultsGroup.rb data.csv 1 1000
+# Usage: ./SimResultsGroup.rb data.csv 1 1000
 #   (1000 (MAXVALUE) is the largest value inside of that specific column.)
 
 filename = File.basename($0)

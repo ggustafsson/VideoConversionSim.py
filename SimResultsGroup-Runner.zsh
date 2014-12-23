@@ -5,7 +5,7 @@
 # Description: The script i used to automatically run SimResultsGroup.rb on all
 # of my logged data files.
 
-# Usage: SimResultsGroup-Runner.zsh
+# Usage: ./SimResultsGroup-Runner.zsh
 
 cd Data
 

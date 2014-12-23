@@ -5,8 +5,8 @@
 # Description: Runs VideoConversionSim.py X times and writes down all of the
 # interesting results into a CSV file.
 
-# Usage: SimLoop.zsh
-#        SimLoop.zsh output.csv
+# Usage: ./SimLoop.zsh
+#        ./SimLoop.zsh output.csv
 
 runs=1000
 sed_parse="sed 's/.*: //;s/ .*//'"
