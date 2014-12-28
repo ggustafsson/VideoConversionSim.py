@@ -12,16 +12,15 @@
 # Usage: ./SimResultsGroup.rb data.csv 1 1000
 #   (1000 (MAXVALUE) is the largest value inside of that specific column.)
 
-filename = File.basename($0)
+separator = ";"
 
 unless ARGV.length == 3
-  puts "Usage: #{filename} [FILENAME]... [COLUMN]... [MAXVALUE]..."
+  puts "Usage: #{File.basename($0)} [FILENAME]... [COLUMN]... [MAXVALUE]..."
   exit
 end
 
 require "csv"
 
-separator = ";"
 file = ARGV[0]
 column = Integer(ARGV[1])
 maxvalue = Integer(ARGV[2])

@@ -9,8 +9,8 @@
 #        ./SimLoop.zsh output.csv
 
 runs=1000
-sed_parse="sed 's/.*: //;s/ .*//'"
 separator=";"
+sed_parse="sed 's/.*: //;s/ .*//'"
 
 if [[ $# -eq 0 ]]; then
   csv_file="SimResults.csv"
