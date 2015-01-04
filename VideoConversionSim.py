@@ -31,20 +31,20 @@ import random
 import simpy
 import statistics
 
-SERVERS = 2
-JOBS_PER_SERVER = 4
-UPLOADS = (24 * 60)
-UPLOADS_INTERVAL = (1 * 60)
-MAX_WAITING_TIME = (5 * 60)
+servers = 2
+jobs_per_server = 4
+uploads = (24 * 60)
+uploads_interval = (1 * 60)
+max_waiting_time = (5 * 60)
 
-MIN_VIDEO_LENGTH = 30
-MAX_VIDEO_LENGTH = (30 * 60)
-CONVERSION_TIME = 0.5
+min_video_length = 30
+max_video_length = (30 * 60)
+conversion_time = 0.5
 
-COLOR_NORMAL   = "\033[0m"
-COLOR_UPLOADED = "\033[1;31m"
-COLOR_STARTED  = "\033[1;33m"
-COLOR_FINISHED = "\033[1;32m"
+color_normal   = "\033[0m"
+color_uploaded = "\033[1;31m"
+color_started  = "\033[1;33m"
+color_finished = "\033[1;32m"
 
 def time_f(seconds):
     """Takes seconds as input and returns it in one of the following formats:
@@ -80,12 +80,12 @@ def convert(env, name, resources):
     global waiting_times
 
     arrived = env.now
-    length = random.randint(MIN_VIDEO_LENGTH, MAX_VIDEO_LENGTH)
-    duration = length * CONVERSION_TIME
+    length = random.randint(min_video_length, max_video_length)
+    duration = length * conversion_time
     video_lengths.append(length)
 
     print("%6d -" % env.now +
-          COLOR_UPLOADED + " %s uploaded " % name + COLOR_NORMAL +
+          color_uploaded + " %s uploaded " % name + color_normal +
           ": Length is %s" % time_f(length))
 
     with resources.request() as wait_for_slot:
@@ -93,49 +93,49 @@ def convert(env, name, resources):
         waited = env.now - arrived
         waiting_times.append(waited)
 
-        if waited > MAX_WAITING_TIME:
+        if waited > max_waiting_time:
             above_max_waiting += 1
 
         if waited > longest_wait:
             longest_wait = waited
 
         print("%6d -" % env.now +
-              COLOR_STARTED + " %s started  " % name + COLOR_NORMAL +
+              color_started + " %s started  " % name + color_normal +
               ": Waited for %s" % time_f(waited))
         yield env.timeout(duration)
         print("%6d -" % env.now +
-              COLOR_FINISHED + " %s finished " % name + COLOR_NORMAL +
+              color_finished + " %s finished " % name + color_normal +
               ": Duration was %s" % time_f(duration))
 
 above_max_waiting = 0
 longest_wait = 0
-server_slots = SERVERS * JOBS_PER_SERVER
+server_slots = servers * jobs_per_server
 video_lengths = []
 waiting_times = []
 
 print("%d server(s), %d job(s) each = %d conversion(s) at a time" % \
-      (SERVERS, JOBS_PER_SERVER, server_slots))
-print("%d video files total, 1 new every ~%s\n" % (UPLOADS, \
-      time_f(UPLOADS_INTERVAL)))
+      (servers, jobs_per_server, server_slots))
+print("%d video files total, 1 new every ~%s\n" % (uploads, \
+      time_f(uploads_interval)))
 
-print("    Video length = %s - %s" % (time_f(MIN_VIDEO_LENGTH), \
-      time_f(MAX_VIDEO_LENGTH)))
-print(" Conversion time = %d%% of video length" % (CONVERSION_TIME * 100))
-print("Max waiting time = %s\n" % time_f(MAX_WAITING_TIME))
+print("    Video length = %s - %s" % (time_f(min_video_length), \
+      time_f(max_video_length)))
+print(" Conversion time = %d%% of video length" % (conversion_time * 100))
+print("Max waiting time = %s\n" % time_f(max_waiting_time))
 
 env = simpy.Environment()
 resources = simpy.Resource(env, capacity=(server_slots))
-uploads = upload(env, UPLOADS, UPLOADS_INTERVAL, resources)
-env.process(uploads)
+uploading = upload(env, uploads, uploads_interval, resources)
+env.process(uploading)
 env.run()
 
 video_length_mean = statistics.mean(video_lengths)
-video_conversion_mean = video_length_mean * CONVERSION_TIME
+video_conversion_mean = video_length_mean * conversion_time
 print("\n   Mean video length: %s" % time_f(video_length_mean))
 print("Mean conversion time: %s\n" % time_f(video_conversion_mean))
 
 video_length_median = statistics.median(video_lengths)
-video_conversion_median = video_length_median * CONVERSION_TIME
+video_conversion_median = video_length_median * conversion_time
 print("   Median video length: %s" % time_f(video_length_median))
 print("Median conversion time: %s\n" % time_f(video_conversion_median))
 
@@ -144,4 +144,4 @@ print(" Median waiting time: %s" % time_f(statistics.median(waiting_times)))
 print("Longest waiting time: %s\n" % time_f(longest_wait))
 
 print("Above max waiting time: %d out of %d" % (above_max_waiting, \
-      UPLOADS))
+      uploads))
