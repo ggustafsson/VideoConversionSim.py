@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
-# Written by Göran Gustafsson <gustafsson.g@gmail.com>.
-
-# Copyright (c) 2014, Göran Gustafsson. All rights reserved.
+# Copyright (c) 2015, Göran Gustafsson. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -25,6 +23,13 @@
 # CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
+
+###############################################################################
+# Version: 1.0                                                                #
+#     Web: https://github.com/ggustafsson/VideoConversionSim.py               #
+#     Git: https://github.com/ggustafsson/VideoConversionSim.py.git           #
+#   Email: gustafsson.g@gmail.com                                             #
+###############################################################################
 
 import datetime
 import random
