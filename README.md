@@ -30,7 +30,7 @@ Dependencies
 ------------
 - **Python 3**
 - **SimPy 3**
-- **Ruby**
+- **Ruby 2**
 - **Zsh**
 - **Gnuplot**
 
