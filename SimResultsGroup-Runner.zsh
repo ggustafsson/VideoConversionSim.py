@@ -1,11 +1,12 @@
 #!/usr/bin/env zsh
 
-# Written by Göran Gustafsson <gustafsson.g@gmail.com>.
-
 # Description: The script i used to automatically run SimResultsGroup.rb on all
 # of my logged data files.
 
 # Usage: ./SimResultsGroup-Runner.zsh
+
+# Written by Göran Gustafsson (gustafsson.g at gmail.com).
+# License: BSD 3-Clause.
 
 cd Data
 

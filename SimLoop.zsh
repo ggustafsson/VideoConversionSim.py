@@ -1,12 +1,13 @@
 #!/usr/bin/env zsh
 
-# Written by Göran Gustafsson <gustafsson.g@gmail.com>.
-
 # Description: Runs VideoConversionSim.py X times and writes down all of the
 # interesting results into a CSV file.
 
 # Usage: ./SimLoop.zsh
 #        ./SimLoop.zsh output.csv
+
+# Written by Göran Gustafsson (gustafsson.g at gmail.com).
+# License: BSD 3-Clause.
 
 runs=1000
 separator=";"

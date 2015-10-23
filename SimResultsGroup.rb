@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-# Written by Göran Gustafsson <gustafsson.g@gmail.com>.
-
 # Description: Parses the CSV file from SimLoop.zsh and group the values in 10
 # equally large range groups.
 #
@@ -11,6 +9,9 @@
 
 # Usage: ./SimResultsGroup.rb data.csv 1 1000
 #   (1000 (MAXVALUE) is the largest value inside of that specific column.)
+
+# Written by Göran Gustafsson (gustafsson.g at gmail.com).
+# License: BSD 3-Clause.
 
 separator = ";"
 

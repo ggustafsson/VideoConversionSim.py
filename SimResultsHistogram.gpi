@@ -1,11 +1,12 @@
 #!/usr/bin/env gnuplot
 
-# Written by Göran Gustafsson <gustafsson.g@gmail.com>.
-
 # Description: The Gnuplot commands used for creating histograms of the
 # collected data.
 
 # Usage: ./SimResultsHistogram.gpi
+
+# Written by Göran Gustafsson (gustafsson.g at gmail.com).
+# License: BSD 3-Clause.
 
 set style data histogram
 set style fill solid border -1
